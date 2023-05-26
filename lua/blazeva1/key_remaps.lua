@@ -11,8 +11,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "<", "mz<gv`z4<Left>")
-vim.keymap.set("v", ">", "mz>gv`z4<Right>")
+-- vim.keymap.set("v", "<", "mz<gv`z4<Left>")
+-- vim.keymap.set("v", ">", "mz>gv`z4<Right>")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -20,9 +20,14 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set('x', 'p', 'pgvy') -- pasting does not yank the selected text
-vim.keymap.set('v', 'd', '"_d') -- use x to cut selection instead
-vim.keymap.set('n', 'D', '"_D')
+-- disable default yank by pasting and deleting
+vim.keymap.set('x', 'p', 'pgvy')
+-- set X to behave like D byt also yank
+-- vim.keymap.set('v', 'd', '"_d')
+-- vim.keymap.set('n', 'D', '"_D')
+-- vim.keymap.set('v', 'D', '"_D')
+-- vim.keymap.set('n', 'X', 'D')
+-- vim.keymap.set('v', 'X', 'D')
 
 vim.keymap.set("n", "Q", "<nop>")
 

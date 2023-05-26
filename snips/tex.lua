@@ -37,7 +37,7 @@ return {
               <>
           \end{<>}
         ]],
-        { i(1, "proof"), i(0), rep(1), }
+        { i(1, "proof"), i(0), rep(1) }
       )
     ),
     s({trig = "it"}, fmta("\\textit{<>}", { d(1, get_visual) })),
@@ -45,13 +45,13 @@ return {
     s({trig = "rm"}, fmta("\\textrm{<>}", { d(1, get_visual) })),
     s({trig = "sc"}, fmta("\\textsc{<>}", { d(1, get_visual) })),
     s({trig = "cal"}, fmta("\\textcal{<>}", { d(1, get_visual) })),
-    s({trig = '([^%d])([%d]+)([^%d])', regTrig = true, wordTrig = false, snippetType="autosnippet"},
-      fmta("<>$<>$<>", { -- automatic $4$ around numbers when writing text
-          f( function(_, snip) return snip.captures[1] end ),
-          f( function(_, snip) return snip.captures[2] end ),
-          f( function(_, snip) return snip.captures[3] end )
-      }), { condition = tex.in_text }
-    ),
+    -- s({trig = '([^%d])([%d]+)([^%d])', regTrig = true, wordTrig = false, snippetType="autosnippet"},
+      -- fmta("<>$<>$<>", { -- automatic $4$ around numbers when writing text
+          -- f( function(_, snip) return snip.captures[1] end ),
+          -- f( function(_, snip) return snip.captures[2] end ),
+          -- f( function(_, snip) return snip.captures[3] end )
+      -- }), { condition = tex.in_text }
+    -- ),
     -- s({trig = "...", snippetType="autosnippet"}, fmta("<>_<>,\\dots,<>_<>", {i(1),i(2),rep(1),i(3)}), { condition = tex.in_math } ),
     s({trig = ". ", snippetType="autosnippet"}, fmta("\\cdot ", {}), { condition = tex.in_math } ),
     s({trig = "l", snippetType="autosnippet"}, fmta("\\ell", {}), { condition = tex.in_math } ),

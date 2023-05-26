@@ -21,14 +21,16 @@ require('lazy').setup({
         -- sudo apt install ripgrep
     },
     {'lukas-reineke/indent-blankline.nvim'},
-    {'phaazon/hop.nvim'},           -- innovative vim movements
     {'tpope/vim-fugitive'},         -- :Git integration
     {'godlygeek/tabular'},          -- :Tab /<with what>
     {'vimwiki/vimwiki'},            -- local wiki under '<leader>ww'
     {'scrooloose/nerdcommenter'},   -- use 'gc' to comment/uncomment
     {'ap/vim-css-color'},           -- inline highlight of #FF000 colors
     {'L3MON4D3/LuaSnip'},           -- snippets
-    {'lervag/vimtex'},              -- LaTeX support
+    {                               -- LaTeX support
+        'lervag/vimtex',
+        lazy = false,
+    },
     {'nvim-treesitter/nvim-treesitter', build=':TSUpdate'}, -- incremental parser (official)
     {'nvim-treesitter/playground'}, -- see parser tree by :TSPlaygroundToggle
     {'rose-pine/neovim', name='rose-pine'},           -- theme
@@ -42,16 +44,16 @@ require('lazy').setup({
             {'neovim/nvim-lspconfig'},             -- Required
             {                                      -- Optional
             'williamboman/mason.nvim',
-            build = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+                build = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
+            },
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'},     -- Required
+        }
     }
-}
 })
